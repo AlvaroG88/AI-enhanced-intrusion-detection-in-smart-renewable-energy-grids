@@ -1,6 +1,6 @@
 # AI-enhanced-intrusion-detection-in-smart-renewable-energy-grids
 
-The paper uses the Smart Grid Intrusion Detection Dataset with Random Forest + Autoencoder to boost accuracy (97.8%) and cut false positives. But even though the dataset has attack types (DoS, Malware, Phishing, MITM, SQLi, Zero-day), it only does binary detection. So adding attack-type classification could be your key contribution. The input is the dataset containing timestamps and attack types. The output of our model will be: (1) Statistical evidence of time-based attack patterns (2) A predictive model estimating the likelihood of the next attack based on temporal features
+The paper uses the Smart Grid Intrusion Detection Dataset with Random Forest + Autoencoder to boost accuracy (97.8%) and cut false positives. But even though the dataset has attack types (DoS, Malware, Phishing, MITM, SQLi, Zero-day), it only does binary detection. So adding attack-type classification could be your key contribution. The input is the dataset containing timestamps and attack types. The output of our model will be: (1) Statistical evidence of time-based attack patterns (2) A predictive model estimating the likelihood of the next attack based on temporal features.
 
  We have two research questions on paper:
 
@@ -22,15 +22,14 @@ Step 4 – Temporal Prediction Modeling (Answer to RQ2) Build a prediction model
 
 ### Root
 - **README.md** — You are here.
-- **prepare_dataset.py** — Step 1 script. Loads raw CSV, cleans it, converts timestamps, and creates time features (`hour`, `day`, `weekday`, `time_segment`, `is_weekend`, IP validation). Outputs the processed CSV.
-- **temporal_analysis.py** *(if present)* — Step 2 script. Frequency plots (hour/weekday), heatmaps, stacked bars; Chi-square tests + Cramér’s V.
-- **analysis_dataset.py** — Legacy/auxiliary analysis script (kept for reference).
+- **prepare_dataset.py** — Step 1 script. Loads raw CSV, cleans it, converts timestamps, and creates time features and new columns. Outputs the processed CSV.
+- **analysis_dataset.py** — Script/code for generating the figures based on the analysis of the processed dataset.
 - **cyber_threat_preparation.ipynb** — Notebook version for data preparation/cleaning (Step 1).
-- **.ipynb_checkpoints/** — Jupyter auto-generated checkpoint files (safe to ignore).
+- **.ipynb_checkpoints/** — 
 
 ### `Dataset/`
 - **Smart Grid Intrusion Detection Dataset - Copy.csv** — Raw dataset (original data source).
-- **cyber_threats_cleaned.csv** — Cleaned export (intermediate).
+- **cyber_threats_cleaned.csv** — Cleaned export dataset.
 - **processed_smart_grid_attacks\*.csv** — Processed dataset from Step 1 with standardized columns:
   `timestamp, source_ip, destination_ip, port, protocol, packet_size, attack_type, source_ip_valid, destination_ip_valid, hour, day, weekday, time_segment, is_weekend`.
 
