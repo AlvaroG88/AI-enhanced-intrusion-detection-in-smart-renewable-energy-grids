@@ -8,8 +8,8 @@ The proposed architecture combines **Random Forest** and **Autoencoder** models 
 ---
 
 ## Research Objectives
-1. ** RQ1 (Temporal Pattern Discovery)**: Do cyber-attacks in smart grids follow identifiable time-based patterns?  
-2. ** RQ2 (Predictive Modeling)**: Can temporal features (hour, day, weekday, time segment) predict the likelihood or type of the next attack?
+1. **RQ1 (Temporal Pattern Discovery)**: Do cyber-attacks in smart grids follow identifiable time-based patterns?  
+2. **RQ2 (Predictive Modeling)**: Can temporal features (hour, day, weekday, time segment) predict the likelihood or type of the next attack?
 
 ---
 
