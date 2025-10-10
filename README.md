@@ -25,7 +25,7 @@ Step 4 – Temporal Prediction Modeling (Answer to RQ2) Build a prediction model
 - **prepare_dataset.py** — Step 1 script. Loads raw CSV, cleans it, converts timestamps, and creates time features and new columns. Outputs the processed CSV.
 - **analysis_dataset.py** — Script/code for generating the figures based on the analysis of the processed dataset.
 - **cyber_threat_preparation.ipynb** — Notebook version for data preparation/cleaning (Step 1).
-- **.ipynb_checkpoints/** — 
+- **.ipynb_checkpoints/** — cyber_threat_preparation-checkpoint.ipynb
 
 ### `Dataset/`
 - **Smart Grid Intrusion Detection Dataset - Copy.csv** — Raw dataset (original data source).
