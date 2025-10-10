@@ -1,49 +1,55 @@
-# AI-enhanced-intrusion-detection-in-smart-renewable-energy-grids
+# AI-Enhanced Intrusion Detection in Smart Renewable Energy Grids
 
-The paper uses the Smart Grid Intrusion Detection Dataset with Random Forest + Autoencoder to boost accuracy (97.8%) and cut false positives. But even though the dataset has attack types (DoS, Malware, Phishing, MITM, SQLi, Zero-day), it only does binary detection. So adding attack-type classification could be your key contribution. The input is the dataset containing timestamps and attack types. The output of our model will be: (1) Statistical evidence of time-based attack patterns (2) A predictive model estimating the likelihood of the next attack based on temporal features.
+This project explores **AI-driven intrusion detection** for smart renewable energy grids by integrating **temporal behavior analysis** and **attack-type classification**.  
+Using the *Smart Grid Intrusion Detection Dataset*, our model enhances the baseline binary detection (normal vs. attack) into a **multi-class predictive framework** capable of identifying attack types such as **DoS, Malware, Phishing, MITM, SQL Injection, and Zero-day**.
 
- We have two research questions on paper:
-
- Do cyber-attacks in smart grids follow identifiable temporal patterns?
- Can we predict the likelihood of the next attack using temporal features such as time of day, day of week, and peak hours?
-Implementation (Step-by-Step):
-
-Step 1 – Data Preparation & Feature Engineering Load and clean the dataset (remove inconsistencies and missing values). Convert Timestamp to datetime and extract temporal features: hour, day, weekday, time_segment (morning/afternoon/night), and is_weekend. Output: structured dataset with time-based features.
-
-Step 2 – Temporal Pattern Analysis (Answer to RQ1) Analyze attack frequency by hour and weekday. Visualize with heatmaps and histograms (e.g., Attack_Type vs Hour). Conduct statistical tests (Chi-square / ANOVA) to check if attack occurrence depends on time. Output: visual and statistical evidence of temporal attack patterns.
-
-Step 3 – Temporal Feature Selection Evaluate which time features (hour, weekday, etc.) are most predictive of attack behavior using feature importance. Output: ranked list of most influential temporal features.
-
-Step 4 – Temporal Prediction Modeling (Answer to RQ2) Build a prediction model (e.g., LSTM, XGBoost Algorithms) using the selected temporal features. Train the model to predict the next probable attack type or occurrence based on recent time patterns. Evaluate using accuracy, precision, Recall, F1-score, and confusion matrix. Output: a trained model capable of predicting attack likelihood.·
+The proposed architecture combines **Random Forest** and **Autoencoder** models to achieve high detection accuracy (97.8%) while reducing false positives. Beyond classification, it focuses on **temporal intelligence** — discovering how attack occurrences vary by hour, weekday, or operational phase of the grid.
 
 ---
 
-## File Index
-
-### Root
-- **README.md** — You are here.
-- **prepare_dataset.py** — Step 1 script. Loads raw CSV, cleans it, converts timestamps, and creates time features and new columns. Outputs the processed CSV.
-- **analysis_dataset.py** — Script/code for generating the figures based on the analysis of the processed dataset.
-- **cyber_threat_preparation.ipynb** — Notebook version for data preparation/cleaning (Step 1).
-- **.ipynb_checkpoints/** — cyber_threat_preparation-checkpoint.ipynb
-
-### `Dataset/`
-- **Smart Grid Intrusion Detection Dataset - Copy.csv** — Raw dataset (original data source).
-- **cyber_threats_cleaned.csv** — Cleaned export dataset.
-- **processed_smart_grid_attacks\*.csv** — Processed dataset from Step 1 with standardized columns:
-  `timestamp, source_ip, destination_ip, port, protocol, packet_size, attack_type, source_ip_valid, destination_ip_valid, hour, day, weekday, time_segment, is_weekend`.
-
-### `analysis_figures2/`
-- **Explanation of figures** — Brief textual summary of figure meanings.
-- **attacks_by_hour.png** — Count of attacks per hour (0–23). *(count)*
-- **attack_rate_by_hour.png** — Attack rate per hour (attacks / total events). *(proportion)*
-- **attacks_by_weekday.png** — Count of attacks per weekday 0–6 (0=Mon … 6=Sun). *(count)*
-- **attack_rate_by_weekday.png** — Attack rate per weekday (attacks / total events). *(proportion)*
-- **attacktype_by_hour_heatmap.png** — Heatmap of non-benign `attack_type` counts by hour. *(heatmap)*
-- **attacktype_by_weekday_heatmap.png** — Heatmap of non-benign `attack_type` counts by weekday. *(heatmap)*
-- **attack_type_by_hour_bars.png** — Stacked counts of non-benign `attack_type` by hour. *(stacked counts)*
-- **attack_type_by_hour_bars_normalized.png** — Stacked proportions (each bar sums to 1) of non-benign `attack_type` by hour. *(stacked proportions)*
-- **attack_type_by_weekday_bars.png** — Stacked counts of non-benign `attack_type` by weekday. *(stacked counts)*
-- **attack_type_by_weekday_bars_normalized.png** — Stacked proportions (each bar sums to 1) of non-benign `attack_type` by weekday. *(stacked proportions)*
+## Research Objectives
+1. ** RQ1 (Temporal Pattern Discovery)**: Do cyber-attacks in smart grids follow identifiable time-based patterns?  
+2. ** RQ2 (Predictive Modeling)**: Can temporal features (hour, day, weekday, time segment) predict the likelihood or type of the next attack?
 
 ---
+
+## Methodology
+**Step 1 – Data Preparation & Feature Engineering**  
+Clean raw data, convert timestamps, and extract time-related features (`hour`, `day`, `weekday`, `time_segment`, `is_weekend`).
+
+**Step 2 – Temporal Pattern Analysis**  
+Visualize attack frequency by time (hour, weekday) using heatmaps and histograms.  
+Apply statistical tests (Chi-square / ANOVA) to confirm time-dependency of attacks.
+
+**Step 3 – Feature Ranking**  
+Use feature importance analysis (Random Forest) to identify the most predictive temporal factors.
+
+**Step 4 – Temporal Prediction Model**  
+Train hybrid models (LSTM / XGBoost) to forecast attack likelihood or type based on recent temporal sequences.  
+Evaluate using **accuracy**, **precision**, **recall**, **F1-score**, and **confusion matrix**.
+
+---
+
+## Repository Structure
+├── README.md
+├── prepare_dataset.py # Data cleaning & time-feature extraction
+├── analysis_dataset.py # Temporal pattern analysis & visualization
+├── cyber_threat_preparation.ipynb # Notebook version for preprocessing
+│
+├── Dataset/
+│ ├── Smart Grid Intrusion Detection Dataset.csv
+│ ├── cyber_threats_cleaned.csv
+│ └── processed_smart_grid_attacks.csv
+│
+└── analysis_figures2/
+├── attacks_by_hour.png
+├── attack_rate_by_weekday.png
+├── attacktype_by_hour_heatmap.png
+└── ...
+
+---
+
+## Expected Contributions
+- **Multi-class detection** for diverse smart-grid attack types  
+- **Temporal insight** into attack behaviors across operational cycles  
+- **Predictive AI model** for proactive cybersecurity in energy networks
