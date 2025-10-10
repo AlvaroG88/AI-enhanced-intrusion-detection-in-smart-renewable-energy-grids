@@ -1,0 +1,34 @@
+Attacks by Hour (attacks_by_hour.png)
+It shows a bar chart with hours 0–23 on the x-axis and the number of attack events on the y-axis (only rows where is_attack = 1). (count)
+
+Attack Rate by Hour (attack_rate_by_hour.png)
+It shows a bar chart of attack rate = (# attacks) / (total events) for each hour. (proportion)
+
+Attacks by Weekday (attacks_by_weekday.png)
+It shows the count of attacks for weekdays 0–6 (0=Mon … 6=Sun). (count)
+
+Attack Rate by Weekday (attack_rate_by_weekday.png )
+It shows the proportion of events that are attacks for each weekday. (proportion)
+
+ Attack Type × Hour (attacktype_by_hour_heatmap.png)
+It shows the next: rows are attack_type, columns are hours 0–23, and the cell color encodes the count of that attack type at that hour.
+Bright cells = concentration of a specific attack type at a specific hour.
+Horizontal bands = an attack type that is common across many hours.
+Vertical bands = many attack types peaking at the same hour.
+
+Attack Type × Weekday (attacktype_by_weekday_heatmap.png)
+It shows the next: rows are attack_type, columns are weekdays 0–6 and colors show counts.
+Concentrated bright cells = certain attack types prefer certain days.
+Broad bright rows = an attack type active across the whole week.
+
+Attack Type vs Hour (attack_type_by_hour_bars.png)
+It shows stacked counts of non-benign attack types by hour (0–23). (count)
+
+Attack Type vs Weekday (attack_type_by_weekday_bars.png)
+It shows stacked counts of non-benign attack types by weekday 0–6 (0=Mon … 6=Sun). (count)
+
+Attack Type vs Hour — Normalized (attack_type_by_hour_bars_normalized.png)
+It shows stacked proportions (each bar sums to 1) of non-benign attack types by hour (0–23). (proportion)
+
+Attack Type vs Weekday — Normalized (attack_type_by_weekday_bars_normalized.png)
+It shows stacked proportions (each bar sums to 1) of non-benign attack types by weekday 0–6 (0=Mon … 6=Sun). (proportion)
