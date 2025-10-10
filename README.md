@@ -1,5 +1,4 @@
-AI-enhanced-intrusion-detection-in-smart-renewable-energy-grids
-Public
+# AI-enhanced-intrusion-detection-in-smart-renewable-energy-grids
 
 The paper uses the Smart Grid Intrusion Detection Dataset with Random Forest + Autoencoder to boost accuracy (97.8%) and cut false positives. But even though the dataset has attack types (DoS, Malware, Phishing, MITM, SQLi, Zero-day), it only does binary detection. So adding attack-type classification could be your key contribution. The input is the dataset containing timestamps and attack types. The output of our model will be: (1) Statistical evidence of time-based attack patterns (2) A predictive model estimating the likelihood of the next attack based on temporal features
 
