@@ -3,7 +3,7 @@
 This project explores **AI-driven intrusion detection** for smart renewable energy grids by integrating **temporal behavior analysis** and **attack-type classification**.  
 Using the *Smart Grid Intrusion Detection Dataset*, our model enhances the baseline binary detection (normal vs. attack) into a **multi-class predictive framework** capable of identifying attack types such as **DoS, Malware, Phishing, MITM, SQL Injection, and Zero-day**.
 
-The proposed architecture combines **Random Forest** and **Autoencoder** models to achieve high detection accuracy (97.8%) while reducing false positives. Beyond classification, it focuses on **temporal intelligence** — discovering how attack occurrences vary by hour, weekday, or operational phase of the grid.
+The proposed architecture combines **Random Forest** and **Autoencoder** models to achieve high detection accuracy (97.8%) while reducing false positives. Beyond classification, it focuses on **temporal intelligence**, discovering how attack occurrences vary by hour, weekday, or operational phase of the grid.
 
 ---
 
