@@ -28,27 +28,6 @@ Use feature importance analysis (Random Forest) to identify the most predictive 
 Train hybrid models (LSTM / XGBoost) to forecast attack likelihood or type based on recent temporal sequences.  
 Evaluate using **accuracy**, **precision**, **recall**, **F1-score**, and **confusion matrix**.
 
----
-
-## Repository Structure
-├── README.md
-├── prepare_dataset.py # Data cleaning & time-feature extraction
-├── analysis_dataset.py # Temporal pattern analysis & visualization
-├── cyber_threat_preparation.ipynb # Notebook version for preprocessing
-│
-├── Dataset/
-│ ├── Smart Grid Intrusion Detection Dataset.csv
-│ ├── cyber_threats_cleaned.csv
-│ └── processed_smart_grid_attacks.csv
-│
-└── analysis_figures2/
-├── attacks_by_hour.png
-├── attack_rate_by_weekday.png
-├── attacktype_by_hour_heatmap.png
-└── ...
-
----
-
 ## Expected Contributions
 - **Multi-class detection** for diverse smart-grid attack types  
 - **Temporal insight** into attack behaviors across operational cycles  
