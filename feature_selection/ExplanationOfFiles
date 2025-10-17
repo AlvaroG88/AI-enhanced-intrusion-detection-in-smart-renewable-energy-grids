@@ -1,0 +1,36 @@
+feature_ranking_mutual_info.csv /feature_ranking_mutual_info.png
+Method: Mutual Information (MI)
+What it measures: Nonlinear dependence between each feature and the label (is_attack), without assuming the form of the link.
+How it is calculated: Estimates MI using a nearest neighbor method (k-NN) on the discrete version of your temporal variables (time, day, weekday, time_segment dummies).
+Interpretation: higher values ⇒ the feature reduces uncertainty about whether there is an attack.
+Pros: detects nonlinear and monotonic/non-monotonic relationships.
+Cons: it is univariate (does not take into account redundancy between features) and can be sensitive to sparsity.
+
+feature_ranking_rf_importance.csv /feature_ranking_rf_importance.png
+Method: Random Forest Feature Importance
+What it measures: average contribution of each feature to impurity reduction (Gini) across many trees.
+How it is calculated: after training the forest, the “gain” contributed by each variable in the partitions is averaged.
+Reading: higher values ⇒ the feature helps more to separate attacks from non-attacks in the trees.
+Pros: captures interactions and non-linearities; robust.
+Cons: can be biased towards variables with many cut-off points/cardinality; it is more relative than absolute.
+
+feature_ranking_logreg_abs_coef.csv / feature_ranking_logreg_abs_coef.png
+Method: Logistic Regression (standardized coefficients)
+What it measures: strength and linear direction of association between each feature and the probability of attack, after standardizing the numerical values (comparable).
+How it is calculated: a logistic regression is trained and the coefficients are taken in absolute value (importance ≈ effect size).
+Interpretation: higher coefficient ⇒ stronger change in log-odds of attack per unit/category.
+Pros: clear interpretability; less bias due to cardinality than RF.
+Cons: assumes linear relationship (in log-odds) and additivity; does not capture unmodeled interactions well.
+
+feature_ranking_permutation_mean.csv /feature_ranking_permutation_mean.png
+Method: Permutation Importance (in validation)
+What it measures: performance loss when shuffling (breaking) a feature after training (here, from Random Forest), evaluated on the validation set.
+How it is calculated: a column is permuted, the average drop in metrics (by default, the model score) is measured, and this is repeated several times.
+Interpretation: greater drop ⇒ the feature provides real information to the model in unseen data.
+Pros: measures post-training importance, captures implicit model interactions, and avoids some biases.
+Cons: costly; if there are highly correlated features, permuting one may not lower performance much (the information is “replaced” by the other).
+
+feature_importance_summary.csv /temporal_feature_importance.png
+Contains the four importance columns (mutual_info, rf_importance, logreg_abs_coef, permutation_mean) and an avg_rank (normalized ranking average).
+Usage: sort by avg_rank to see which variables are consistent and globally important across methods.
+Displays avg_rank (best = top).
